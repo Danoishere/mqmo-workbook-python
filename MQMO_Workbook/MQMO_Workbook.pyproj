@@ -4,13 +4,15 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ba3f3798-108c-4758-99b7-366428989db5</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>MQMO_Workbook.py</StartupFile>
+    <StartupFile>_\donotmodify.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>MQMO_Workbook</Name>
     <RootNamespace>MQMO_Workbook</RootNamespace>
+    <InterpreterId>Global|PythonCore|3.6</InterpreterId>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +23,105 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="MQMO_Workbook.py" />
+    <Compile Include="danorand.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="danosim.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Praktika\Praktikum06_Aufg2.py" />
+    <Compile Include="Praktika\Praktikum05_Aufg2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Praktika\Praktikum02_Aufg3.py" />
+    <Compile Include="Praktika\Praktikum02_Aufg2.py" />
+    <Compile Include="Praktika\Praktikum02_Aufg1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Praktika\Praktikum05_Aufg1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QueueCalc\PoissonProcess_Calc.py" />
+    <Compile Include="QueueCalc\MMs_Calc.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QueueSim\Arrival.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QueueSim\PoissonProcess_Sim.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shift Planing\Shift_Planning_2_Aufg9.py" />
+    <Compile Include="Shift Planing\Shift_Planning.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shift Planing\Transportation_Aufg10.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forecasting\Winters_Forecast.py" />
+    <Compile Include="Tasks\Aufg2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="simpyx\resources\__init__.py" />
+    <Compile Include="simpyx\util.py" />
+    <Compile Include="simpyx\__init__.py" />
+    <Compile Include="_\donotmodify.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Forecasting\Holt_Winters_Data.xlsx" />
+    <Content Include="Shift Planing\Schichtplanung_Inzidenz.xlsx" />
+    <Content Include="simpyx\core.c" />
+    <Content Include="simpyx\core.cp36-win_amd64.pyd" />
+    <Content Include="simpyx\core.html" />
+    <Content Include="simpyx\core.pyx" />
+    <Content Include="simpyx\events.c" />
+    <Content Include="simpyx\events.cp36-win_amd64.pyd" />
+    <Content Include="simpyx\events.html" />
+    <Content Include="simpyx\events.pyx" />
+    <Content Include="simpyx\monitoring.c" />
+    <Content Include="simpyx\monitoring.cp36-win_amd64.pyd" />
+    <Content Include="simpyx\monitoring.html" />
+    <Content Include="simpyx\monitoring.pyx" />
+    <Content Include="simpyx\resources\base.c" />
+    <Content Include="simpyx\resources\base.cp36-win_amd64.pyd" />
+    <Content Include="simpyx\resources\base.html" />
+    <Content Include="simpyx\resources\base.pyx" />
+    <Content Include="simpyx\resources\container.c" />
+    <Content Include="simpyx\resources\container.cp36-win_amd64.pyd" />
+    <Content Include="simpyx\resources\container.html" />
+    <Content Include="simpyx\resources\container.pyx" />
+    <Content Include="simpyx\resources\resource.c" />
+    <Content Include="simpyx\resources\resource.cp36-win_amd64.pyd" />
+    <Content Include="simpyx\resources\resource.html" />
+    <Content Include="simpyx\resources\resource.pyx" />
+    <Content Include="simpyx\resources\store.c" />
+    <Content Include="simpyx\resources\store.cp36-win_amd64.pyd" />
+    <Content Include="simpyx\resources\store.html" />
+    <Content Include="simpyx\resources\store.pyx" />
+    <Content Include="simpyx\rt.c" />
+    <Content Include="simpyx\rt.cp36-win_amd64.pyd" />
+    <Content Include="simpyx\rt.html" />
+    <Content Include="simpyx\rt.pyx" />
+    <Content Include="simpyx\_compat.c" />
+    <Content Include="simpyx\_compat.cp36-win_amd64.pyd" />
+    <Content Include="simpyx\_compat.html" />
+    <Content Include="simpyx\_compat.pyx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forecasting\" />
+    <Folder Include="_\" />
+    <Folder Include="Praktika\" />
+    <Folder Include="simpyx\" />
+    <Folder Include="simpyx\resources\" />
+    <Folder Include="Tasks\" />
+    <Folder Include="QueueSim\" />
+    <Folder Include="QueueCalc\" />
+    <Folder Include="Shift Planing\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.6" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
