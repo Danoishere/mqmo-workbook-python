@@ -23,6 +23,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="danolin.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="danorand.py">
       <SubType>Code</SubType>
     </Compile>
@@ -59,12 +62,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Forecasting\Winters_Forecast.py" />
+    <Compile Include="Tasks\Aufg10.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Tasks\Aufg2.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="simpyx\resources\__init__.py" />
     <Compile Include="simpyx\util.py" />
     <Compile Include="simpyx\__init__.py" />
+    <Compile Include="Tasks\Aufg9.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="_\donotmodify.py">
       <SubType>Code</SubType>
     </Compile>

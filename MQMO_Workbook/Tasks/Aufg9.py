@@ -1,36 +1,47 @@
-import pulp as pp
+import pyximport
+pyximport.install()
+import simpyx as sp
+import danosim as ds
+import danorand as dr
+import danolin as dl
 import numpy as np
+import matplotlib.pyplot as plt
+import pulp as pp
 
-def multiply_vec(p,x):
-    return pp.lpSum([x[i]*p[i] for i in range(p.shape[0])])
 
 prob = pp.LpProblem("My LP Problem", pp.LpMinimize)
 
-Inz = np.array([[1, 0,	1,	0,	0,	0,	0],
-                [1,	1,	1,	1,	0,	0,	0],
-                [1,	1,	1,	1,	1,	0,	0],
-                [0,	1,	1,	1,	1,	1,	0],
-                [1,	0,	0,	1,	1,	1,	1],
-                [1,	1,	0,	0,	1,	1,	1],
-                [1,	1,	0,	0,	0,	1,	1],
-                [0,	1,	0,	0,	0,	0,	1]])
+# Columns = Schichten
+# Rows = Stunden in den Schichten
 
-b = np.array([7, 7, 8, 9, 10, 10, 8, 4])
+Inz = np.array([[1,0,0,0,0,1],
+                [1,1,0,0,0,0],
+                [0,1,1,0,0,0],
+                [0,0,1,1,0,0],
+                [0,0,0,1,1,0],
+                [0,0,0,0,1,1]])
 
-x = []
-for i in range(Inz.shape[1]):
-    x.append(pp.LpVariable('i' + str(i), lowBound=0, cat='Discrete'))
+b = np.array([3,8,10,8,14,5])
 
-p = [60,60,40,40,40,40,40]
-h = [6,6,4,4,4,4,4]
+# A*x = b
 
+# Create x
+x = dl.create_pulp_vector(Inz.shape[1])
+
+# price per shift-hour
+p = np.array([80, 75, 70, 70, 75, 80])
+
+# hours per shift
+h = np.array([8, 8, 8, 8, 8, 8])
+  
+# total price per shift
 ptot = np.multiply(p,h)
 
 # Prices/Target function
-prob += multiply_vec(ptot, x), "Cash" 
+prob += dl.multiply_vec(ptot, x), "Cash" 
 
 # Max. employees constraint
-prob += pp.lpSum(x) <= 15
+prob += pp.lpSum(x) <= 27
 
 # Row-constriansts
 for row in range(Inz.shape[0]):
