@@ -23,6 +23,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="danolab.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="danolin.py">
       <SubType>Code</SubType>
     </Compile>
@@ -62,6 +65,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Forecasting\Winters_Forecast.py" />
+    <Compile Include="Simulink\Task2_Imbissbude.py" />
+    <Compile Include="Simulink\Simulink_Test.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Tasks\Aufg10.py">
       <SubType>Code</SubType>
     </Compile>
@@ -117,9 +124,11 @@
     <Content Include="simpyx\_compat.cp36-win_amd64.pyd" />
     <Content Include="simpyx\_compat.html" />
     <Content Include="simpyx\_compat.pyx" />
+    <Content Include="Simulink\Task2_Imbissbude.slx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forecasting\" />
+    <Folder Include="Simulink\" />
     <Folder Include="_\" />
     <Folder Include="Praktika\" />
     <Folder Include="simpyx\" />

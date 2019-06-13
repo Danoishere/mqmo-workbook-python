@@ -8,6 +8,7 @@ from numpy.random import choice
 class Object(object):
     pass
 
+
 # BASIC QUEUE OPERATIONS  ------------------------------------------------------------
 
 def new_queue(env, size=float('inf')):
@@ -43,12 +44,14 @@ def dequeue(queue):
     queue.total_dequeued += 1
     return dequeue_task
 
+
 def log_dequeue(queue, item):
     item.t_dequeued = queue._env.now
     ticks = queue._env.ticks
     queue.total_time_spent += item.t_dequeued - item.t_enqueued
     queue.avg_num_in_queue = ticks/queue.total_time_spent
     pass
+
 
 def is_queue_full(queue):
     return len(queue.items) >= queue.capacity
@@ -136,7 +139,6 @@ def _server(env,from_queue, to_queue, serving_rate, serving_delay, rnd_func, ser
     while True:
         item = yield dequeue(from_queue)
         log_dequeue(from_queue, item)
-
         yield env.timeout(rnd_func(serving_delay))
         server_info.num_served += 1
         server_info.utilization = server_info.num_served/server_info.max_served
