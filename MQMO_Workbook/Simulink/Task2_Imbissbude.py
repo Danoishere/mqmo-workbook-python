@@ -15,7 +15,9 @@ y = []
 
 lost = []
 
+
 for s in seats:
+    
     print('seats: '+ str(s))
     profit = s*-20
 
@@ -24,17 +26,21 @@ for s in seats:
     served = env['num_served']
     arrived = env['num_generated']
     served = served[-1]
-    arrived = 0.3*ticks
+    arrived = arrived[-1]
 
     exp_per_day = ticks/min_per_day
+
     served = served/exp_per_day
     arrived = arrived/exp_per_day
 
     profit += served*15
+    customers_lost = arrived - served
 
     x.append(s)
     y.append(profit)
-    lost.append(arrived - served)
+    lost.append(customers_lost)
+
+    print('Seats: ' + str(s) + ', Profit: ' + str(profit) + ' Customers lost: ' + str(customers_lost))
 
 plt.subplot(2,1,1)
 plt.plot(x,y)
